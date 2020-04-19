@@ -43,6 +43,17 @@
 		<url-pattern>/dburl</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>head</servlet-name>
+		<servlet-class>com.rr.servlet.HeaderServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>head</servlet-name>
+		<url-pattern>/headurl</url-pattern>
+	</servlet-mapping>
+	
+	
 	<welcome-file-list>
 		<welcome-file>input.html</welcome-file>
 	</welcome-file-list>

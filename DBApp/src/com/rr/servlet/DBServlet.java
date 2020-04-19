@@ -46,8 +46,11 @@ public class DBServlet extends HttpServlet {
 	}//init
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		RequestDispatcher rd=null;
+		RequestDispatcher rd1=null,rd2=null,rd3=null;
 		try {
+			//include header content
+			rd2=req.getRequestDispatcher("/headurl");
+			rd2.include(req, res);
 			//read data from form page
 			int no=Integer.parseInt(req.getParameter("teno"));
 			//get printwriter object
@@ -66,14 +69,21 @@ public class DBServlet extends HttpServlet {
 				pw.println("<br><b>Emp desg is: </b>"+rs.getString(3));
 				pw.println("<br><b>Emp salary is: </b>"+rs.getFloat(4));				
 			}//if
+			else {
+				pw.println("<b>records not found</b>");				
+			}
+			pw.println("<br><br><br><a href='input.html'>home</a>");
+			//include footer content
+			rd3=req.getRequestDispatcher("/footer.html");
+			rd3.include(req, res);
 			//close resultset object
 			rs.close();
 			//close stream object
 			pw.close();
 		}//try
 		catch(Exception e) {
-			rd=req.getRequestDispatcher("/eurl");
-			rd.forward(req, res);
+			rd1=req.getRequestDispatcher("/eurl");
+			rd1.forward(req, res);
 			e.printStackTrace();
 		}//catch
 	}//doGet
