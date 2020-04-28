@@ -16,11 +16,11 @@ public class Servlet2 extends HttpServlet {
 		res.setContentType("text/html");
 		//read first form and second form data+
 		pw.println("<br>First Form data is");
-		pw.println("<br>Name is"+req.getParameter("pname"));
-		pw.println("<br>Age is"+req.getParameter("page"));
-		pw.println("<br>Marital status is"+req.getParameter("ms"));
+		pw.println("<br><b>Name is<b>"+req.getParameter("pname"));
+		pw.println("<br><b>Age is<b>"+req.getParameter("page"));
+		pw.println("<br><b>Marital status is<b>"+req.getParameter("ms"));
 		
-		pw.println("<br><br>Second form data is "+req.getParameter("st1")+"<br>"+req.getParameter("st2"));
+		pw.println("<br><br><b>Second form data is <b>"+req.getParameter("st1")+"<br>"+req.getParameter("st2"));
 		pw.close();
 	}//doGet
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
