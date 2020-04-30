@@ -1,0 +1,14 @@
+<html>
+  <head>
+     <script language=javascript" src="vaidations.js">
+     </script>
+  </head>
+  <form action="voterurl" onsubmit="return validate(this)">
+    person name: <input type="text" name="pname"/><span id="nameErr"></span><br>
+    person age: <input type="text" name="page"/><span id="ageErr"></span><br>
+    
+    <input type="hidden" value="no" name="vflag"/><br>
+    <input type="submit" value="check voting eligibility"/>
+    
+  </form>
+</html>
